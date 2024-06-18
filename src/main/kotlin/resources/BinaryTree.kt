@@ -1,9 +1,7 @@
 package resources
 
 import androidx.compose.runtime.mutableStateListOf
-import androidx.compose.runtime.remember
 import androidx.compose.runtime.snapshots.SnapshotStateList
-import kotlinx.coroutines.*
 
 data class Node(
     var data: Int,
