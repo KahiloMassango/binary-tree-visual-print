@@ -14,7 +14,8 @@ fun InputField(
     modifier: Modifier = Modifier,
     placeholder: String,
     buttonText: String,
-    onButtonCLick: (Int) -> Unit
+    onButtonCLick: (Int) -> Unit,
+    buttonColors: ButtonColors = ButtonDefaults.buttonColors(MyTheme.secondaryContainer, MyTheme.onSecondaryContainer)
 
 ) {
     var value by remember { mutableStateOf("") }
@@ -37,7 +38,9 @@ fun InputField(
 
         )
         Spacer(modifier = Modifier.width(8.dp))
-        Button(onClick = {
+        Button(
+            colors = buttonColors,
+            onClick = {
             value.toIntOrNull()?.let {
                 onButtonCLick(it)
                 value = ""

@@ -11,7 +11,7 @@ data class Node(
 
 class BinaryTree(
     var head: Node? = null,
-    var nodesList: MutableList<Int> = mutableListOf(),
+    var nodesList: SnapshotStateList<Int> = mutableStateListOf(),
     var inOrderList: SnapshotStateList<Int> = mutableStateListOf(),
     var preOrderList: SnapshotStateList<Int> = mutableStateListOf(),
     var postOrderList: SnapshotStateList<Int> = mutableStateListOf(),
