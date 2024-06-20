@@ -16,7 +16,6 @@ class BinaryTree(
     var postOrderList: SnapshotStateList<Int> = mutableStateListOf(),
 ) {
 
-
     fun isEmpty(): Boolean {
         return head == null
     }
@@ -93,12 +92,14 @@ class BinaryTree(
                 node.right = removeHelper(node.right, node.data)
             } else { // find predecessor to replace this
                 node.data = predecessor(node)
-                node.left = removeHelper(node.left, node.data)
+                // If the predecessor is the left child itself, don't remove it
+                if (node.left != null && node.left!!.data != node.data) {
+                    // Remove the predecessor from its original position
+                    node.left = removeHelper(node.left, node.data)
+                }
             }
         }
-
         return node
-
     }
 
     private fun successor(node: Node): Int {
@@ -106,15 +107,15 @@ class BinaryTree(
         while (root?.left != null) {
             root = root.left
         }
-        return root!!.data
+        return root?.data ?: node.data
     }
 
     private fun predecessor(node: Node): Int {
         var root = node.left
         while (root?.right != null) {
-            root = root.left
+            root = root.right
         }
-        return root!!.data
+        return root?.data ?: node.data
     }
 
     private fun preOrderHelper(node: Node?) {
@@ -150,17 +151,5 @@ class BinaryTree(
         preOrderHelper(head)
         postOrderHelper(head)
     }
-
-   /* init {
-        head = Node(100, left = Node(50), right = Node(150))
-    }*/
-
-}
-
-fun main() {
-    val tree = BinaryTree()
-    tree.insert(55)
-    tree.insert(52)
-    tree.insert(58)
 
 }

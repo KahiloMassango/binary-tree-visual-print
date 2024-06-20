@@ -7,7 +7,7 @@ import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
 import androidx.compose.animation.slideInVertically
 import androidx.compose.animation.slideOutVertically
-import androidx.compose.animation.with
+import androidx.compose.animation.togetherWith
 import androidx.compose.desktop.ui.tooling.preview.Preview
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
@@ -33,7 +33,7 @@ fun App(
     var currentScreen by remember { mutableStateOf(Screen.BinaryTree) }
 
     Surface(
-        modifier = Modifier.fillMaxSize(),
+        modifier = modifier.fillMaxSize(),
         color = MyTheme.background
     ) {
         Row(
@@ -67,9 +67,9 @@ fun App(
                 targetState = currentScreen,
                 transitionSpec = {
                     if (targetState == Screen.Queue) {
-                        slideInVertically { height -> height } + fadeIn() with slideOutVertically { height -> -height } + fadeOut()
+                        slideInVertically { height -> height } + fadeIn() togetherWith  slideOutVertically { height -> -height } + fadeOut()
                     } else {
-                        slideInVertically { height -> -height } + fadeIn() with slideOutVertically { height -> height } + fadeOut()
+                        slideInVertically { height -> -height } + fadeIn() togetherWith  slideOutVertically { height -> height } + fadeOut()
                     }.using(
                         SizeTransform(clip = false)
                     )
