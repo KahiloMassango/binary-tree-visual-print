@@ -46,7 +46,7 @@ class BinaryTree(
                 updateTraversalLists()
             }
         } else {
-            println("Value is not in the tree")
+            println("Valor não está na lista")
         }
     }
 
@@ -83,18 +83,16 @@ class BinaryTree(
             node.left = removeHelper(node.left, value)
         } else if(value > node.data) {
             node.right = removeHelper(node.right, value)
-        } else { // node found
+        } else {
             if(node.left == null && node.right == null) {
                 updateTraversalLists()
                 return null
-            } else if(node.right != null) { // find sucessor to replace this
+            } else if(node.right != null) {
                 node.data = successor(node)
                 node.right = removeHelper(node.right, node.data)
-            } else { // find predecessor to replace this
+            } else {
                 node.data = predecessor(node)
-                // If the predecessor is the left child itself, don't remove it
                 if (node.left != null && node.left!!.data != node.data) {
-                    // Remove the predecessor from its original position
                     node.left = removeHelper(node.left, node.data)
                 }
             }

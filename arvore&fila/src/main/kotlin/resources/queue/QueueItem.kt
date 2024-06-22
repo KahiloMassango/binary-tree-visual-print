@@ -31,7 +31,6 @@ fun QueueItem(
         Card(
             backgroundColor = MyTheme.secondaryContainer,
             modifier = Modifier
-                //.padding(4.dp)
                 .fillMaxWidth(),
             elevation = 8.dp,
         ) {

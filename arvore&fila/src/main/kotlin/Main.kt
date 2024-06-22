@@ -15,6 +15,7 @@ fun main() = application {
                 modifier = Modifier,
                 color = MyTheme.background,
             ) {
+
                 App()
             }
         }
