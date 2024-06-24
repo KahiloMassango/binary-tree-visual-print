@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulação de Estruturas de Dados</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        .section {
+            margin-bottom: 20px;
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        input {
+            margin: 5px 0;
+            padding: 8px;
+            width: calc(100% - 22px);
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            margin: 5px;
+            padding: 10px 20px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .display {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-top: 10px;
+            min-height: 40px;
+            width: calc(100% - 22px);
+            box-sizing: border-box;
+            white-space: pre-wrap;
+            background-color: #f9f9f9;
+            border-radius: 4px;
+        }
+    </style>
+    <script defer src="js/app.js"></script>
+</head>
+<body>
+    <h1>Simulação de Estruturas de Dados</h1>
+
+    <div class="section">
+        <h2>Pilha</h2>
+        <input type="text" id="stackInput" placeholder="Digite o valor">
+        <button onclick="empilhar()">Empilhar</button>
+        <button onclick="desempilhar()">Desempilhar</button>
+        <div id="stackDisplay" class="display"></div>
+    </div>
+
+    <div class="section">
+        <h2>Lista Ligada</h2>
+        <input type="text" id="listInput" placeholder="Digite o valor">
+        <input type="number" id="listPosition" placeholder="Digite a posição">
+        <button onclick="inserirLista()">Inserir</button>
+        <button onclick="removerLista()">Remover</button>
+        <div id="listDisplay" class="display"></div>
+    </div>
+
+    <div class="section">
+        <h2>Grafo</h2>
+        <input type="text" id="vertexInput" placeholder="Digite o vértice">
+        <button onclick="adicionarVertice()">Adicionar Vértice</button>
+        <input type="text" id="edgeV1Input" placeholder="Vértice 1">
+        <input type="text" id="edgeV2Input" placeholder="Vértice 2">
+        <button onclick="adicionarAresta()">Adicionar Aresta</button>
+        <div id="graphDisplay" class="display"></div>
+    </div>
+</body>
+</html>
