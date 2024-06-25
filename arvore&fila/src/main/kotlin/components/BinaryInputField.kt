@@ -7,6 +7,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import resources.MyTheme
 
 
 @Composable
@@ -69,7 +70,7 @@ fun QueueInputField(
         TextField(
             modifier = Modifier,
             value = value,
-            onValueChange = { value = it.toString() },
+            onValueChange = { value = it },
             label = {
                 Text(placeholder, color = MyTheme.onSurfaceVariant)
             },

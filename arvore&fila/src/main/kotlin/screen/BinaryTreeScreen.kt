@@ -13,6 +13,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import components.BinaryInputField
 import drawBinaryTree
+import resources.MyTheme
 import resources.binaryTree.BinaryTree
 import resources.binaryTree.DfsDisplay
 
@@ -21,7 +22,7 @@ import resources.binaryTree.DfsDisplay
 @Composable
 fun BinaryTreeVisualizer() {
 
-    var binaryTree = BinaryTree()
+    val binaryTree = BinaryTree()
 
     Surface(
         modifier = Modifier,//.verticalScroll(rememberScrollState()),

@@ -1,5 +1,3 @@
-package screen
-
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.animation.SizeTransform
@@ -23,6 +21,10 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
+import resources.MyTheme
+import screen.BinaryTreeVisualizer
+import screen.GraphScreen
+import screen.QueueScreen
 
 @OptIn(ExperimentalAnimationApi::class)
 @Preview
@@ -56,9 +58,18 @@ fun App(
                     icon = { },
                     onClick = {
                         currentScreen = Screen.Queue
-                        println("current: $currentScreen")
                     },
                     label = { Text(text = "Fila", fontSize = 14.sp, fontWeight = FontWeight.Medium) },
+                    selectedContentColor = MyTheme.primary,
+                    unselectedContentColor = MyTheme.onSecondary
+                )
+                NavigationRailItem(
+                    selected = currentScreen == Screen.Graphs,
+                    icon = { },
+                    onClick = {
+                        currentScreen = Screen.Graphs
+                    },
+                    label = { Text(text = "Grafos", fontSize = 14.sp, fontWeight = FontWeight.Medium) },
                     selectedContentColor = MyTheme.primary,
                     unselectedContentColor = MyTheme.onSecondary
                 )
@@ -78,6 +89,7 @@ fun App(
                 when(screen){
                     Screen.Queue -> QueueScreen()
                     Screen.BinaryTree -> BinaryTreeVisualizer()
+                    Screen.Graphs -> GraphScreen()
                 }
             }
         }
@@ -85,5 +97,5 @@ fun App(
 }
 
 enum class Screen {
-    BinaryTree, Queue
+    BinaryTree, Queue, Graphs
 }

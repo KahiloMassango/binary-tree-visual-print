@@ -1,3 +1,5 @@
+package resources
+
 import androidx.compose.ui.graphics.Color
 
 object MyTheme {
@@ -15,7 +17,6 @@ object MyTheme {
     val onSecondary = Color(0xFFF5F5F5)
 
     val onSurfaceVariant = Color(0xFFABB4BD)
-    val outlineVariant = Color(0xFFABB4BD)
 
     val error = Color(0xFFFF2424)
         val onError = Color.White

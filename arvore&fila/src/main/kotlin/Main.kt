@@ -5,7 +5,7 @@ import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.WindowPlacement
 import androidx.compose.ui.window.WindowState
 import androidx.compose.ui.window.application
-import screen.App
+import resources.MyTheme
 
 fun main() = application {
     val windowState = WindowState(placement = WindowPlacement.Fullscreen)
@@ -15,7 +15,6 @@ fun main() = application {
                 modifier = Modifier,
                 color = MyTheme.background,
             ) {
-
                 App()
             }
         }
