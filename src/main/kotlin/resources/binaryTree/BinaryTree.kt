@@ -92,9 +92,8 @@ class BinaryTree(
                 node.right = removeHelper(node.right, node.data)
             } else {
                 node.data = predecessor(node)
-                if (node.left != null && node.left!!.data != node.data) {
-                    node.left = removeHelper(node.left, node.data)
-                }
+                node.left = removeHelper(node.left, node.data)
+
             }
         }
         return node

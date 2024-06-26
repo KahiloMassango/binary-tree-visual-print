@@ -39,8 +39,8 @@ fun GraphScreen(
                 verticalArrangement = Arrangement.spacedBy(8.dp)
             ) {
                 GraphInputField(
-                    placeholder = "Nó",
-                    buttonText = "Adicionar nó",
+                    placeholder = "Node",
+                    buttonText = "Add",
                     onButtonCLick = { node ->
                         graph.addNode(node.uppercase())
                         nodePositions.clear()
@@ -48,8 +48,8 @@ fun GraphScreen(
                     buttonColors = ButtonDefaults.buttonColors(MyTheme.secondaryContainer, MyTheme.onSecondary),
                 )
                 GraphInputField(
-                    placeholder = "Nó",
-                    buttonText = "Remover nó",
+                    placeholder = "Node",
+                    buttonText = "Remove",
                     onButtonCLick = { node ->
                         graph.removeNode(node.uppercase())
                         nodePositions.clear()
@@ -58,18 +58,18 @@ fun GraphScreen(
                 )
                 Spacer(modifier = Modifier.height(16.dp))
                 GraphTextField(
-                    placeholder1 = "Nó Origem",
-                    placeholder2 = "Nó Destino",
-                    buttonText = "adicionar Aresta",
+                    placeholder1 = "Source node",
+                    placeholder2 = "Destination node",
+                    buttonText = "Add Edge",
                     onClick = { srcNode, dstNode ->
                         graph.addEdge(srcNode, dstNode)
                     }
                 )
                 Spacer(modifier = Modifier.height(16.dp))
                 GraphTextField(
-                    placeholder1 = "Nó Origem",
-                    placeholder2 = "Nó Destino",
-                    buttonText = "remover Aresta",
+                    placeholder1 = "Source node",
+                    placeholder2 = "Destination node",
+                    buttonText = "Remove Edge",
                     onClick = { srcNode, dstNode ->
                         graph.removeEdge(srcNode, dstNode)
                     }

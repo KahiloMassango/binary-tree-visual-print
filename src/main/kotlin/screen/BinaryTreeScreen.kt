@@ -40,8 +40,8 @@ fun BinaryTreeVisualizer() {
                     .width(600.dp)
             ) {
                 BinaryInputField(
-                    placeholder = "Valor a ser inserido na árvore",
-                    buttonText = "Inserir",
+                    placeholder = "Value to insert",
+                    buttonText = "Insert",
                     onButtonCLick = { value ->
                         binaryTree.insert(value)
                     },
@@ -49,8 +49,8 @@ fun BinaryTreeVisualizer() {
                 )
                 Spacer(modifier = Modifier.height(8.dp))
                 BinaryInputField(
-                    placeholder = "Valor a ser removido",
-                    buttonText = "Remover",
+                    placeholder = "Value to remove",
+                    buttonText = "Remove",
                     onButtonCLick = { value ->
                         binaryTree.remove(value)
                     },
@@ -58,17 +58,17 @@ fun BinaryTreeVisualizer() {
                 )
                 Spacer(modifier = Modifier.height(16.dp))
                 DfsDisplay(
-                    title = "Pré Ordem",
+                    title = "Pre Order",
                     values = binaryTree.preOrderList
                 )
                 Spacer(modifier = Modifier.height(16.dp))
                 DfsDisplay(
-                    title = "Em Ordem",
+                    title = "In Order",
                     values = binaryTree.inOrderList
                 )
                 Spacer(modifier = Modifier.height(16.dp))
                 DfsDisplay(
-                    title = "Pós ordem",
+                    title = "Post Order",
                     values = binaryTree.postOrderList
                 )
             }

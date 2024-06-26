@@ -33,8 +33,8 @@ fun QueueScreen() {
                 verticalArrangement = Arrangement.spacedBy(8.dp)
             ) {
                 QueueInputField(
-                    placeholder = "Valor a ser inserido na fila",
-                    buttonText = "Enfileirar",
+                    placeholder = "Value to enqueue",
+                    buttonText = "Enqueue",
                     onButtonCLick = { value ->
                         queue.add(value)
                     },
@@ -45,13 +45,13 @@ fun QueueScreen() {
                     onClick = { queue.removeFirstOrNull() },
                     enabled = queue.isNotEmpty()
                 ) {
-                    Text(text = "Desenfileirar")
+                    Text(text = "Dequeue")
                 }
             }
             if (queue.isEmpty()) {
                 Text(
                     modifier = Modifier,
-                    text = "A fila está vázia",
+                    text = "The queue is empty",
                     fontSize = 24.sp,
                 )
             }

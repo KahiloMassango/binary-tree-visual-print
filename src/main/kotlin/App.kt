@@ -1,11 +1,4 @@
-import androidx.compose.animation.AnimatedContent
-import androidx.compose.animation.ExperimentalAnimationApi
-import androidx.compose.animation.SizeTransform
-import androidx.compose.animation.fadeIn
-import androidx.compose.animation.fadeOut
-import androidx.compose.animation.slideInVertically
-import androidx.compose.animation.slideOutVertically
-import androidx.compose.animation.togetherWith
+import androidx.compose.animation.*
 import androidx.compose.desktop.ui.tooling.preview.Preview
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
@@ -13,11 +6,7 @@ import androidx.compose.material.NavigationRail
 import androidx.compose.material.NavigationRailItem
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
+import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
@@ -49,7 +38,7 @@ fun App(
                     selected = currentScreen == Screen.BinaryTree,
                     icon = { },
                     onClick = { currentScreen = Screen.BinaryTree },
-                    label = { Text("Árvore Binária", fontSize = 14.sp, fontWeight = FontWeight.Medium) },
+                    label = { Text("Binary Tree", fontSize = 14.sp, fontWeight = FontWeight.Medium) },
                     selectedContentColor = MyTheme.primary,
                     unselectedContentColor = MyTheme.onSecondary
                 )
@@ -59,7 +48,7 @@ fun App(
                     onClick = {
                         currentScreen = Screen.Queue
                     },
-                    label = { Text(text = "Fila", fontSize = 14.sp, fontWeight = FontWeight.Medium) },
+                    label = { Text(text = "Queue", fontSize = 14.sp, fontWeight = FontWeight.Medium) },
                     selectedContentColor = MyTheme.primary,
                     unselectedContentColor = MyTheme.onSecondary
                 )
@@ -69,7 +58,7 @@ fun App(
                     onClick = {
                         currentScreen = Screen.Graphs
                     },
-                    label = { Text(text = "Grafos", fontSize = 14.sp, fontWeight = FontWeight.Medium) },
+                    label = { Text(text = "Graphs", fontSize = 14.sp, fontWeight = FontWeight.Medium) },
                     selectedContentColor = MyTheme.primary,
                     unselectedContentColor = MyTheme.onSecondary
                 )
